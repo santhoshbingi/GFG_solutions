@@ -1,6 +1,7 @@
 class Solution {
     int upperBound(int[] arr, int target) {
         // code here
+        
         int n = arr.length;
         int low = 0;
         int high = n - 1;
@@ -8,7 +9,7 @@ class Solution {
         
         while(low <= high) {
             
-            int mid = (low + high) / 2;
+            int mid = low + (high - low) / 2;
             
             if(arr[mid] > target) {
                 ans = mid;
@@ -19,6 +20,8 @@ class Solution {
                 low = mid + 1;
             }
         }
+        
         return ans;
+        
     }
 }
