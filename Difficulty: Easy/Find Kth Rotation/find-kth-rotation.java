@@ -1,29 +1,29 @@
 class Solution {
     public int findKRotation(int arr[]) {
         // Code here
-        int n= arr.length;
+        int n = arr.length;
         int low = 0;
         int high = n - 1;
+        int min = Integer.MAX_VALUE;
         int index = -1;
         
-        int ans = Integer.MAX_VALUE;
-        
         while(low <= high) {
+            
             int mid = low + (high - low) / 2;
             
             if(arr[low] <= arr[mid]) {
-                //ans = Math.min(ans,arr[low]);
-                if(arr[low] < ans) {
-                    ans = arr[low];
+                //min = Math.min(min, arr[low]);
+                if(arr[low] < min) {
+                    min = arr[low];
                     index = low;
                 }
                 low = mid + 1;
             }
             
             else {
-                //ans = Math.min(ans, arr[mid]);
-                if(arr[mid] < ans) {
-                    ans = arr[mid];
+                //min = Math.min(min, arr[mid]);
+                if(arr[mid] < min) {
+                    min = arr[mid];
                     index = mid;
                 }
                 high = mid - 1;
