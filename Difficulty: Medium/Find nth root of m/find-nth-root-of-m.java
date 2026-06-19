@@ -6,9 +6,9 @@ class Solution {
             
             result = result * base;
             
-            if(result > m) {
-                return result;
-            }
+            // if(result > m) {
+            //     return result;
+            // }
         }
         
         return result;
