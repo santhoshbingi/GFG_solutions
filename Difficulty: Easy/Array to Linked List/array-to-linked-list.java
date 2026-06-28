@@ -13,14 +13,14 @@ class Solution {
     public Node arrayToList(int arr[]) {
         // code here
         Node head = new Node(arr[0]);
-        Node mover = head;
+        Node prev = head;
         
-        for(int  i = 1; i < arr.length; i++) {
-            Node temp = new Node(arr[i]);
-            mover.next = temp;
-            mover = temp;
+        for(int i = 1; i < arr.length; i++) {
+            prev.next = new Node(arr[i]);
+            prev = prev.next;
         }
         
         return head;
+        
     }
 }
