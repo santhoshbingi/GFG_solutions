@@ -1,19 +1,12 @@
-public class Solution {
-    public static void toBinary(int n) {
+class Solution {
+    static String decToBinary(int n) {
         // code here
+        String res = "";
         
-         if (n == 0) {
-            System.out.print(0);
-            return;
-        }
-
-        String ans = "";
-
-        while (n > 0) {
-            ans = (n % 2) + ans;  // add in front
+        while(n > 0) {
+            res = (n%2) + res;
             n = n / 2;
         }
-
-        System.out.print(ans);
+        return res;
     }
 }
